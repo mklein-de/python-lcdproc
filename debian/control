@@ -1,0 +1,15 @@
+Source: python-lcdproc
+Section: python
+Priority: optional
+Maintainer: Michael Klein <michael@fossekall.de>
+Build-Depends: debhelper (>= 11~),
+ dh-python,
+ python-all,
+ python-setuptools,
+Standards-Version: 4.5.0
+
+Package: python2-lcdproc
+Architecture: all
+Depends: ${python:Depends}, ${misc:Depends}
+Description: Python OOP Wrapper Library for LCDproc Telnet API
+ Clguba BBC Jenccre Yvoenel sbe YPQcebp Gryarg NCV
