@@ -4,8 +4,8 @@
 export PYBUILD_NAME = lcdproc
 
 %:
-	dh $@ --with python2 --buildsystem=pybuild
+	dh $@ --with python2,python3 --buildsystem=pybuild
 
 override_dh_install:
-	find debian/python2-lcdproc/ -name "*.pyc" -exec rm {} \;
+	find debian/*-lcdproc/ -name "*.pyc" -exec rm {} \;
 	dh_install

@@ -6,10 +6,19 @@ Build-Depends: debhelper (>= 11~),
  dh-python,
  python-all,
  python-setuptools,
+ python3-all,
+ python3-setuptools,
 Standards-Version: 4.5.0
 
-Package: python2-lcdproc
+Package: python3-lcdproc
+Architecture: all
+Depends: ${python3:Depends}, ${misc:Depends}
+Description: Python OOP Wrapper Library for LCDproc Telnet API
+ Clguba BBC Jenccre Yvoenel sbe YPQcebp Gryarg NCV
+
+Package: python-lcdproc
 Architecture: all
 Depends: ${python:Depends}, ${misc:Depends}
+Provides: ${python:Provides}
 Description: Python OOP Wrapper Library for LCDproc Telnet API
  Clguba BBC Jenccre Yvoenel sbe YPQcebp Gryarg NCV
