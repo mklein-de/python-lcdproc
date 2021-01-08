@@ -10,7 +10,7 @@ class Server(object):
 
     """ LCDproc Server Object """
 
-    def __init__(self, hostname="localhost", port=13666, debug=False):
+    def __init__(self, hostname="localhost", port=13666, debug=False, encoding='latin1'):
 
         """ Constructor """
 
@@ -21,6 +21,7 @@ class Server(object):
         self.server_info = dict()
         self.screens = dict()
         self.keys = list()
+        self.encoding = encoding
 
     def start_session(self):
 
@@ -43,7 +44,7 @@ class Server(object):
 
         """ Request """
 
-        self.tn.write((command_string + "\n").encode())
+        self.tn.write((command_string + "\n").encode(self.encoding))
         if self.debug: print("Telnet Request:  %s" % (command_string))
         while True:
             response = urllib.unquote(self.tn.read_until(b"\n").decode())
@@ -133,7 +134,7 @@ class Server(object):
 
         Return None or LCDd response on error
         """
-        response = self.request(("output %s" % (value)).encode())
+        response = self.request(("output %s" % (value)).encode(self.encoding))
         if "success" in response:
             return None
         else:
